@@ -24,7 +24,7 @@ color scheme: http://tdd.li/nk/n18sx
 }
 
 body {
-	font: 18px/22px "Helvetica Neue", Arial, Helvetica, sans-serif; /* baseline 22px */
+	font: 18px/25px "Helvetica Neue", Arial, Helvetica, sans-serif;
 	color: #333;
 	max-width: 1280px;
 	margin-left: auto;
@@ -362,12 +362,24 @@ h6 {
  */
 
 article {
-	margin: 44px 0;
+	margin: 44px 0 2em 0;
+	padding-bottom: 2em;
+	border-bottom: 1px solid #f5f4ed;
 }
 
 article p {
-	margin-bottom: 22px;
-	margin-top: 22px;
+	margin: 22px auto;
+}
+
+article p,
+article ul,
+article ol,
+article .constrain,
+article .quote,
+.format-status {
+	max-width: 550px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 article, .pagenav {
@@ -392,6 +404,49 @@ figure {
 	-webkit-break-inside: avoid;
 	-moz-break-inside: avoid;
 	break-inside: avoid;
+}
+
+/**
+ * Quote Post Format
+ */
+article .quote blockquote {
+	margin: 0;
+}
+
+article .quote-caption {
+	font-style: italic;
+	font-size: 90%;
+	margin-left: 20%;
+}
+
+/**
+ * Status Post Format
+ */
+.format-status .avatar {
+	float: left;
+	border-radius: 2px;
+}
+
+.format-status .status-update {
+	position: relative;
+	background-color: #999;
+	color: #ececec;
+	padding: 1em;
+	border-radius: 2px;
+	margin-left: 125px;
+	min-height: 96px;
+}
+
+.format-status .status-update:before {
+	content: ' ';
+	position: absolute;
+	left: -2em;
+	top: 50%;
+	margin-top: -1em;
+	border: 1em solid transparent;
+	border-right-color: #999;
+	height: 0;
+	width: 0;
 }
 /**
  * Sidebar and Widgets
@@ -638,14 +693,6 @@ input, textarea {
 		transition: all ease-in .25s;
 	}
 
-	.single-column .entry,
-	.single-column .entry,
-	.page .single-column .entry,
-	.single .single-column .entry {
-		width: 50%;
-		margin-left: 0;
-		float: left;
-	}
 
 	.single-column .comments-section {
 		margin-top: 0;

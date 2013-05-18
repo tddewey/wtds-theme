@@ -33,7 +33,7 @@ function tdd_theme_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-image' => get_template_directory_uri() . '/images/default-background.png'
 	) );
-	// add_theme_support( 'post-formats', array() );
+	add_theme_support( 'post-formats' );
 	// add_theme_support( 'custom-header', array() );
 
 	/* An approximation of what is shown on the front-end for TinyMCE. Typography, mostly. */

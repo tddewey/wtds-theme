@@ -618,8 +618,7 @@ MBP.hideUrlBar();
 	L.settings = K
 }(jQuery, document, this));
 
-/*! jQuery slabtext plugin v2 MIT/GPL2 @freqdec */
-(function($){$.fn.slabText=function(options){var settings={fontRatio:0.78,forceNewCharCount:true,wrapAmpersand:true,headerBreakpoint:null,viewportBreakpoint:null,noResizeEvent:false};$("body").addClass("slabtexted");return this.each(function(){if(options){$.extend(settings,options)}var $this=$(this),keepSpans=$("span.slabtext",$this).length,words=keepSpans?[]:String($.trim($this.text())).replace(/\s{2,}/g," ").split(" "),origFontSize=null,idealCharPerLine=null,fontRatio=settings.fontRatio,forceNewCharCount=settings.forceNewCharCount,headerBreakpoint=settings.headerBreakpoint,viewportBreakpoint=settings.viewportBreakpoint,resizeThrottle=null,viewportWidth=$(window).width();var grabPixelFontSize=function(){var dummy=jQuery('<div style="display:none;font-size:1em;margin:0;padding:0;height:auto;line-height:1;border:0;">&nbsp;</div>').appendTo($this),emH=dummy.height();dummy.remove();return emH};var resizeSlabs=function resizeSlabs(){var parentWidth=$this.width(),fs;$this.removeClass("slabtextdone slabtextinactive");if(viewportBreakpoint&&viewportBreakpoint>viewportWidth||headerBreakpoint&&headerBreakpoint>parentWidth){$this.addClass("slabtextinactive");return}fs=grabPixelFontSize();if(!keepSpans&&(forceNewCharCount||fs!=origFontSize)){origFontSize=fs;var newCharPerLine=Math.min(60,Math.floor(parentWidth/(origFontSize*fontRatio))),wordIndex=0,lineText=[],counter=0,preText="",postText="",finalText="",preDiff,postDiff;if(newCharPerLine!=idealCharPerLine){idealCharPerLine=newCharPerLine;while(wordIndex<words.length){postText="";while(postText.length<idealCharPerLine){preText=postText;postText+=words[wordIndex]+" ";if(++wordIndex>=words.length){break}}preDiff=idealCharPerLine-preText.length;postDiff=postText.length-idealCharPerLine;if((preDiff<postDiff)&&(preText.length>2)){finalText=preText;wordIndex--}else{finalText=postText}lineText.push('<span class="slabtext">'+(settings.wrapAmpersand?finalText.replace("&",'<span class="amp">&amp;</span>'):finalText)+"</span>")}$this.html(lineText.join(""))}}else{origFontSize=fs}$("span.slabtext",$this).each(function(){var $span=$(this),innerText=$span.text(),wordSpacing=innerText.split(" ").length>1,diff,ratio,fontSize;$span.css("word-spacing",0).css("letter-spacing",0);ratio=parentWidth/$span.width();fontSize=parseFloat(this.style.fontSize)||origFontSize;$span.css("font-size",(fontSize*ratio).toFixed(3)+"px");diff=parentWidth-$span.width();if(diff){$span.css((wordSpacing?"word":"letter")+"-spacing",(diff/(wordSpacing?innerText.split(" ").length-1:innerText.length)).toFixed(3)+"px")}});$this.addClass("slabtextdone")};resizeSlabs();if(!settings.noResizeEvent){$(window).resize(function(){if($(window).width()==viewportWidth){return}viewportWidth=$(window).width();clearTimeout(resizeThrottle);resizeThrottle=setTimeout(resizeSlabs,300)})}})}})(jQuery);
+
 
 /*!
  * Custom, global javascript.
@@ -632,46 +631,4 @@ jQuery(document).ready(function ($) {
 	$('.wp-caption a:has(img)').colorbox({ scalePhotos:true, maxWidth:'80%', maxHeight:'80%' });
 	//TODO: bind to single images that are inside a link that links to an image. Or, just bind to anchors that link to images...
 
-	// Function to slabtext the H1 headings
-	function slabTextHeadlines() {
-		$(".single article > h2").add(".page article > h2").each(function(i, val){
-			var oldHref = $(val).children('a').attr('href');
-			$(val).slabText({ "viewportBreakpoint" : 480 }).wrapInner('<a href="' + oldHref + '">');
-		});
-
-	}
-
-	$(window).load(function() {
-		slabTextHeadlines();
-	});
-
-
-	// Align images to baseline.
-	var fontSize = 18,
-			lineHeight = 22,
-			topMargin = 6;
-
-	/* todo: figure out where numbers like 2 and 5 are coming in */
-	$(window).resize(function () {
-		$('.entry img:not(.alignnone)').each(function () {
-			var imgHeight = $(this).outerHeight(),
-					mod = imgHeight % lineHeight,
-					bottomMargin = fontSize - topMargin + mod + 2;
-			$(this).css('margin-top', topMargin);
-			$(this).css('margin-bottom', bottomMargin);
-		});
-
-		$('.entry img.alignnone').each(function(){
-			var origHeight = $(this).data('origHeight'),
-					maxHeight = origHeight - (origHeight % lineHeight);
-			console.log(maxHeight);
-			$(this).css('max-height', maxHeight - 5 );
-		});
-	});
-
-	$('.entry img').load(function() {
-		/* Original heights stored so the images don't continually resize in one direction onResize */
-		$('.entry img.alignnone').data('origHeight', $(this).outerHeight());
-		$(window).resize();
-	});
 });
