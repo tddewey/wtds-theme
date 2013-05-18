@@ -485,7 +485,20 @@ article .quote-caption {
 }
 
 .format-link .entry {
+ /* possibly need to text-align left... */
+}
 
+/**
+ * Image post format... and for now, galleries too
+ */
+.format-image,
+.format-gallery {
+	text-align: center;
+}
+
+.format-image .entry,
+.format-gallery .entry {
+	text-align: left;
 }
 
 /**
