@@ -477,6 +477,16 @@ article .quote-caption {
 	left: 0;
 }
 
+/**
+ * Link Post Format
+ */
+.format-link {
+	text-align:center;
+}
+
+.format-link .entry {
+
+}
 
 /**
  * Sidebar and Widgets
@@ -677,29 +687,37 @@ input, textarea {
 		column-gap: 2em;
 	}
 
-	.single-column .explanation {
+	.explanation {
 		font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 		font-size: 30px;
 		line-height: 44px;
-		width: 40%;
-		float: right;
 		padding: 0 1em;
+		margin-right: -1em;
 	}
 
-	.single-column .explanation .explanation-hand-pointing {
+	.explanation .explanation-hand-pointing {
 		font-size: 40px;
 		position: relative;
 		bottom: -0.2em;
 		color: #9F9452;
+		padding-left: 5px;
 		padding-right: 5px;
 	}
 
-	.single-column .explanation .explanation-text {
+	.explanation .explanation-text {
 		color: #ececec;
 		font-size: 20px;
 		background-color: #9F9452;
 		font-style: italic;
 		padding: 10px;
+	}
+
+	.explanation a {
+		color: #fff;
+	}
+
+	.explanation a:hover {
+		text-decoration: underline;
 	}
 
 	.shortlink {
