@@ -411,6 +411,8 @@ figure {
  */
 article .quote blockquote {
 	margin: 0;
+	border-left: 1px solid #a16380;
+	padding-left: 1.5em;
 }
 
 article .quote-caption {
