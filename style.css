@@ -776,11 +776,6 @@ input, textarea {
 		height: 150px;
 	}
 
-	.single .entry, .page .entry {
-		width: 70%;
-		float: left;
-	}
-
 	.comments-section {
 		margin-top: 0;
 		width: 27%;
