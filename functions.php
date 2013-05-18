@@ -49,12 +49,12 @@ function tdd_enqueue_scripts() {
 	$min = defined( 'SCRIPT_DEBUG' ) ? 'min.' : '';
 
 	// Styles
-	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/default-styles.' . $min . 'css', array(), null );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/style.css', array( 'normalize' ), null );
+	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/default-styles.' . $min . 'css', array(), 1 );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/style.css', array( 'normalize' ), 1 );
 
 	// Scripts
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr-2.5.3-dev.' . $min . 'js', array(), '2.5.3', false ); // must be in header
-	wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.' . $min . 'js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'global', get_template_directory_uri() . '/js/global.' . $min . 'js', array( 'jquery' ), 1, true );
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
 	/* Set variables to use in javascript. e.g. phpVars.ajaxurl */
