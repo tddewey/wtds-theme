@@ -284,8 +284,6 @@ header .logo, footer .social-circle {
 	height: 50px;
 	width: 50px;
 	background-color: #9F9452;
-	-webkit-border-radius: 200px;
-	-moz-border-radius: 200px;
 	border-radius: 200px;
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
@@ -519,8 +517,7 @@ footer {
 	font-size: .8em;
 	color: #fff;
 	padding-right: 4em;
-	border-top-right-radius: 50px 40px;
-	border-top-left-radius: 50px 40px;
+	border-radius: 5px 5px 0 0;
 }
 
 footer .social-circle {
