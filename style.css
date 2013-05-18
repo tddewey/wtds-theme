@@ -1,0 +1,712 @@
+/*
+Theme Name: TDDewey Sandbox
+Theme URI: http://websitesthatdontsuck.com
+Description:
+Author: tddewey
+Author URI: http://websitesthatdontsuck.com
+Version: 1.0
+Tags:
+
+License: GPL v3
+License URI: http://www.gnu.org/copyleft/gpl.html
+
+color scheme: http://tdd.li/nk/n18sx
+*/
+
+/**
+ * Global (main) Styles
+ * Includes tags that affect large areas of the design such as body{} html{}, etc.
+ */
+*, html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font: 18px/22px "Helvetica Neue", Arial, Helvetica, sans-serif; /* baseline 22px */
+	color: #333;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	padding: 0 10px 0 10px;
+}
+
+.meta {
+	font-size: 15px;
+	line-height: 22px;
+}
+
+hr {
+	margin-top: 22px;
+	margin-bottom: 21px;
+}
+
+pre, code, kbd, samp {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.aligncenter, div.aligncenter, .center {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.alignleft, .floatleft, .left {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.alignright, .floatright, .right {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+img {
+	max-width: 100%;
+	max-height: auto;
+}
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 22px;
+}
+
+.entry {
+	/* background-image: url("images/22pxgrid.png") !important; */
+}
+
+/**
+ * Anchors and Links
+ * For consistency, it would be nice if all styles for links are placed here.
+ */
+a {
+	color: #345A63;
+	text-decoration: none;
+}
+
+h2 a, h2 a:visited {
+	color: #333;
+	color: rgba(0, 0, 0, 0.7);
+	text-decoration: none;
+}
+
+h2 a:hover {
+	color: #345A63;
+	-webkit-transition: all .25s linear;
+}
+
+.pagenav {
+	margin: 22px 0;
+	font-style: italic;
+	text-align: center;
+	font-size: 44px;
+	line-height: 44px;
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.pagenav .current {
+	display: inline-block;
+}
+
+.pagenav .of {
+	font-size: 22px;
+	line-height: 22px;
+}
+
+.pagenav .of:before, .pagenav .of:after {
+	content: "\2002\2013\2002"; /* enspace endash enspace */
+}
+
+.pagenav .newer, .pagenav .older {
+	display: inline-block;
+	position: relative;
+}
+
+.pagenav .disabled {
+	visibility: hidden;
+}
+
+.pagenav .newer a, .pagenav .older a {
+	position: relative;
+	display: inline-block;
+	background-color: #5c5c5c;
+	height: 110px;
+	vertical-align: bottom;
+	color: #fff;
+	font-size: 22px;
+	padding: 33px 22px;
+	margin: 0 55px;
+}
+
+.pagenav .older a:after {
+	position: absolute;
+	top: 0;
+	content: " ";
+	border: 55px solid transparent;
+	right: -85px;
+	border-left-color: #5c5c5c;
+	border-left-width: 30px;
+}
+
+.pagenav .newer a:after {
+	position: absolute;
+	top: 0;
+	content: " ";
+	border: 55px solid transparent;
+	left: -85px;
+	border-right-color: #5c5c5c;
+	border-right-width: 30px;
+}
+
+.left-chevron:before {
+	content: " ";
+	border: 55px solid transparent;
+	position: absolute;
+	bottom: 0;
+	left: 25px;
+	border-bottom-color: #5c5c5c;
+	border-left-width: 30px;
+	border-right-width: 0;
+}
+
+.left-chevron:after {
+	content: " ";
+	border: 55px solid transparent;
+	position: absolute;
+	top: 0;
+	left: 25px;
+	border-top-color: #5C5C5C;
+	border-left-width: 30px;
+	border-right-width: 0;
+}
+
+.right-chevron:before {
+	content: " ";
+	border: 55px solid transparent;
+	position: absolute;
+	bottom: 0;
+	right: 25px;
+	border-bottom-color: #5c5c5c;
+	border-right-width: 30px;
+	border-left-width: 0;
+}
+
+.right-chevron:after {
+	content: " ";
+	border: 55px solid transparent;
+	position: absolute;
+	top: 0;
+	right: 25px;
+	border-top-color: #5c5c5c;
+	border-right-width: 30px;
+	border-left-width: 0;
+}
+
+.arrow:hover a {
+	border-color: #345A63;
+	background-color: #345A63;
+}
+
+.arrow:hover .right-chevron:after,
+.arrow:hover .left-chevron:after {
+	border-top-color: #345A63;
+}
+
+.arrow:hover .right-chevron:before,
+.arrow:hover .left-chevron:before {
+	border-bottom-color: #345A63;
+}
+
+.newer:hover a:after {
+	border-right-color: #345A63;
+}
+
+.older:hover a:after {
+	border-left-color: #345A63;
+}
+
+/**
+ * Header and Headings
+ * Takes care of the typography for all headings, and other styles related to the header in general.
+ * Note that header navigation is in the next section (navigation)
+ */
+
+.site-header {
+	position: relative;
+	text-align: right;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.tagline {
+	width: 75%;
+	margin: 0 auto;
+	color: #eff1e9;
+	text-shadow: #5D1B3A -1px -1px 1px;
+}
+
+.site-header nav li {
+	display: inline-block;
+	line-height: 2;
+}
+
+.site-header nav li a {
+	color: #5D1B3A;
+	text-decoration: none;
+	padding: .25em .5em;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 20px;
+}
+
+.site-header nav li a:hover {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header-bezier {
+}
+
+.header-content, footer {
+	background-image: url("images/header-background.png");
+	padding: 1em 0;
+}
+
+header .logo, footer .social-circle {
+	display:block;
+	position: absolute;
+	left: -15px;
+	bottom: -15px;
+	padding: 5px;
+	height: 50px;
+	width: 50px;
+	background-color: #9F9452;
+	-webkit-border-radius: 200px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+header .logo:hover, footer .social-circle {
+	box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+	-webkit-transform: rotate(2deg);
+	-webkit-transition: all .25s linear;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2 {
+	font-family: 'Hammersmith One', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+	color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 35px;
+	line-height: 44px;
+	margin-bottom: 22px;
+
+}
+
+/* Adjust these to the baseline grid */
+h2 {
+	font-size: 50px;
+	line-height: 66px;
+	margin-bottom: 22px;
+	text-rendering: optimizeLegibility;
+}
+
+h3 {
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 22px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+h4 {
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 22px;
+}
+
+h5 {
+	font-size: 18px;
+	line-height: 22px;
+	margin-bottom: 22px;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+h6 {
+	font-size: 18px;
+	line-height: 22px;
+	margin-bottom: 22px;
+}
+
+/**
+ * Navigation
+ * Styles for menus and whatnot go here. Note that a theme may have more than one navigation area.
+ */
+
+/**
+ * Content
+ * Styles specific to the main content go here
+ */
+
+article {
+	margin: 44px 0;
+}
+
+article p {
+	margin-bottom: 22px;
+	margin-top: 22px;
+}
+
+article, .pagenav {
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+article p:first-child {
+	margin-top: 0;
+}
+
+.shortlink .desc {
+	width: 48%;
+	margin-right: 2%;
+	float: left;
+}
+
+.shortlink input {
+	width: 48%;
+}
+
+figure {
+	-webkit-break-inside: avoid;
+	-moz-break-inside: avoid;
+	break-inside: avoid;
+}
+/**
+ * Sidebar and Widgets
+ */
+
+/**
+ * Footer
+ * Styles for the footer go here
+ */
+
+footer {
+	position:relative;
+	margin-top: 2em;
+	padding: 1em;
+	font-size: .8em;
+	color: #fff;
+	padding-right: 4em;
+	border-top-right-radius: 50px 40px;
+	border-top-left-radius: 50px 40px;
+}
+
+footer .social-circle {
+	font-size: 10px;
+	padding-left: 1.2em;
+	padding-top: 2.5em;
+	height:7em;
+	width:7em;
+	color:#ececec;
+	left:auto;
+	right:-15px;
+	top:-3.2em;
+}
+
+/**
+ * Tables
+ * How tables are displayed, or any special data table types are set up here
+ */
+
+table {
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+td, th {
+	padding: 5px .5em .5em;
+}
+
+/**
+ * Forms
+ * Form elements are styled here
+ */
+
+input, textarea {
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	padding: 5px;
+	margin-top: -11px; /* aligning text inside to nearby text, inputs are inline elements */
+}
+
+/**
+ * Comments
+ * The comment display area and any special styles for the comment form (not defined above) are here
+ */
+
+.comments-section {
+	margin-top: 22px;
+}
+
+.commentlist {
+	margin: 0;
+	padding: 0;
+}
+
+.commentlist li {
+	list-style-type: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 0 10px 22px 10px;
+	position: relative;
+	margin-bottom: 22px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	overflow-wrap: break-word;
+}
+
+.comment-meta, .comment-author {
+	font-size: 11px;
+	line-height: 22px;
+}
+
+.comment-author {
+	font-size: 15px;
+}
+
+.comment-author .avatar {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.comment-reply-link {
+	display: none;
+}
+
+#respond textarea, #respond input[type=text] {
+	margin: 0;
+	font-size: 15px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	width: 100%;
+	line-height: 22px; /* 5px padding */
+}
+
+#respond textarea {
+	height: 110px;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+.logged-in-as, .comment-notes {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+#respond input[type=submit] {
+	font-size: 18px;
+}
+
+.comment-form-author, .comment-form-email, .comment-form-url, .comment-form-comment {
+	margin: 0;
+}
+
+/**
+ * Responsive / Media Queries
+ * Above styles are common across all screen sizes, we override or add styles for larger browsers widths
+ */
+
+/* 480px and up
+( e.g. iPhone Landscape ) */
+@media only screen and (min-width: 480px) {
+	header .logo {
+		width: 75px;
+		height: 75px;
+	}
+
+	footer .social-circle {
+		font-size:12px
+	}
+}
+
+/* 600px and up
+( e.g. Kindle Portrait ) */
+@media only screen and (min-width: 600px) {
+	header .logo {
+		width: 100px;
+		height: 100px;
+	}
+
+	footer .social-circle {
+		font-size:15px
+	}
+
+}
+
+/* 768px and up
+( e.g. iPad Portrait ) */
+@media only screen and (min-width: 768px) {
+
+	header .logo {
+		width: 125px;
+		height: 125px;
+	}
+
+	.multi-column .entry {
+		clear: both;
+
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		column-count: 2;
+
+		-webkit-column-rule: 1px dotted rgba(0, 0, 0, 0.3);
+		-moz-column-rule: 1px dotted rgba(0, 0, 0, 0.3);
+		column-rule: 1px dotted rgba(0, 0, 0, 0.3);
+
+		-webkit-column-gap: 2em;
+		-moz-column-gap: 2em;
+		column-gap: 2em;
+	}
+
+	.single-column .explanation {
+		font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+		font-size: 30px;
+		line-height: 44px;
+		width: 40%;
+		float: right;
+		padding: 0 1em;
+	}
+
+	.single-column .explanation .explanation-hand-pointing {
+		font-size: 40px;
+		position: relative;
+		bottom: -0.2em;
+		color: #9F9452;
+		padding-right: 5px;
+	}
+
+	.single-column .explanation .explanation-text {
+		color: #ececec;
+		font-size: 20px;
+		background-color: #9F9452;
+		font-style: italic;
+		padding: 10px;
+	}
+
+	.shortlink {
+		margin-left: 35%;
+		padding-left: 1em;
+		width: 35%;
+		margin-top: 22px;
+	}
+
+	.site-header nav {
+		margin: 1em 120px;
+	}
+
+	.site-header nav li a {
+		-webkit-transition: all ease-out .25s;
+		transition: all ease-in .25s;
+	}
+
+	.site-header nav li a:hover {
+		-webkit-transition: all ease-in .25s;
+		transition: all ease-in .25s;
+	}
+
+	.single-column .entry,
+	.single-column .entry,
+	.page .single-column .entry,
+	.single .single-column .entry {
+		width: 50%;
+		margin-left: 0;
+		float: left;
+	}
+
+	.single-column .comments-section {
+		margin-top: 0;
+		width: 47%;
+		float: left;
+		padding-left: 1.5%;
+		margin-left: 1.5%;
+		border-left: 1px dotted rgba(0, 0, 0, 0.3);
+	}
+
+}
+
+/* 992px and up
+( e.g. iPad landscape, smaller laptops, older desktops ) */
+@media only screen and (min-width: 992px) {
+	header .logo {
+		width: 150px;
+		height: 150px;
+	}
+
+	.single .entry, .page .entry {
+		width: 70%;
+		float: left;
+	}
+
+	.comments-section {
+		margin-top: 0;
+		width: 27%;
+		float: left;
+		padding-left: 1.5%;
+		margin-left: 1.5%;
+		border-left: 1px dotted rgba(0, 0, 0, 0.3);
+	}
+
+}
+
+/* 1382px and up
+( e.g. modern laptops, modern desktops ) */
+@media only screen and (min-width: 1382px) {
+
+	header {
+		min-height: 200px;
+	}
+
+	header .logo {
+		width: 200px;
+		height: 200px;
+		left: -20px;
+		bottom: -20px;
+	}
+
+}
+
+/* 2x Graphics
+( used on retina MBP, iPhone 4 and above, and other devices with a high pixel ratio ) */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+
+}
+
+/* Print
+Be the cool kid on the block with a print stylesheet. Antiquated? Think of it as a PDF stylesheet, too */
+@media print {
+
+}
